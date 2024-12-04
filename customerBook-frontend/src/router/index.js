@@ -16,7 +16,7 @@ const routes = [
     path: '/',
     name: 'CustomerList',
     component: CustomerList,
-    meta: { requiresAuth: true }, // Requires authentication
+    meta: { requiresAuth: true }, 
   },
   {
     path: '/login',
@@ -28,26 +28,26 @@ const routes = [
     path: '/customerform',
     name: 'CustomerForm',
     component: CustomerForm,
-    meta: { requiresAuth: true }, // Requires authentication
+    meta: { requiresAuth: true }, 
   },
   {
     path: '/CustomerUpdate/:id',
     name: 'CustomerUpdate',
     component: UpdateCustomer,
     props: true,
-    meta: { requiresAuth: true }, // Requires authentication
+    meta: { requiresAuth: true }, 
   },
   {
     path: '/add-customer',
     name: 'AddCustomer',
     component: CustomerForm,
-    meta: { requiresAuth: true }, // Requires authentication
+    meta: { requiresAuth: true },
   },
   {
     path: '/search',
     name: 'Search',
     component: SearchCustomer,
-    meta: { requiresAuth: true }, // Requires authentication
+    meta: { requiresAuth: true }, 
   },
 ];
 
@@ -56,19 +56,15 @@ const router = createRouter({
   routes,
 });
 
-// Navigation Guard
 router.beforeEach((to, from, next) => {
   const isAuthenticated = localStorage.getItem('token') !== null;
 
-  // Check if the route requires authentication
   if (to.meta.requiresAuth && !isAuthenticated) {
-    // If not authenticated, redirect to login page
     next('/login');
   } else if (to.path === '/login' && isAuthenticated) {
-    // If already authenticated, redirect from login page to home
     next('/');
   } else {
-    next(); // Allow navigation
+    next(); 
   }
 });
 

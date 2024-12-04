@@ -101,7 +101,7 @@
   </script>
   
   <style scoped>
-/* Center the form in the middle of the page */
+  
 form {
   width: 50vw;
   margin: 0 auto;
@@ -117,7 +117,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Style each form group */
 div {
   margin-bottom: 15px;
 }
@@ -145,7 +144,6 @@ input[type="text"]:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Mobile number input group */
 div > div {
   display: flex;
   align-items: center;
@@ -166,7 +164,6 @@ button[type="button"]:hover {
   background-color: #c82333;
 }
 
-/* Add Mobile Number button */
 button[type="button"]:last-of-type {
   background-color: #28a745;
 }
@@ -175,7 +172,6 @@ button[type="button"]:last-of-type:hover {
   background-color: #218838;
 }
 
-/* Submit button */
 button[type="submit"] {
   display: block;
   width: 100%;

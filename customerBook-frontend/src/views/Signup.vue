@@ -25,7 +25,7 @@
   <script>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
-  import { signup } from '../apiService' // Import the sign-up API function
+  import { signup } from '../apiService' 
   
   export default {
     setup() {
@@ -38,7 +38,7 @@
         try {
           await signup({ name: name.value, email: email.value, password: password.value })
           alert('Sign-up successful! Please login.')
-          router.push('/login') // Redirect to login page after successful sign-up
+          router.push('/login') 
         } catch (error) {
           console.error('Sign-up failed:', error)
           alert('Sign-up failed. Please try again.')
